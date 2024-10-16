@@ -9,7 +9,7 @@ public enum Type {
 }
 
 public enum Rarity {
-    Common,
-    Rare,
-    Legendary,
+    Common = 0,
+    Rare = 1,
+    Legendary = 2,
 }

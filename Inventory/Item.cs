@@ -1,6 +1,6 @@
 namespace Inventory;
 
-class Item {
+public class Item {
     public int ID { get; private set; }
     public string Name { get; private set; }
     public Type ItemType { get; private set; }
@@ -14,4 +14,6 @@ class Item {
         this.ItemRarity = ItemRarity;
         this.Strength = Strength;
     }
+
+    public string Display() => $"{ID}, {Name}, {ItemType}, {ItemRarity}, {Strength}";
 }
