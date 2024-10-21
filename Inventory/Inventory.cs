@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Reflection;
-using System.Runtime.InteropServices;
+﻿using System.Diagnostics.Contracts;
 
 namespace Inventory;
 
@@ -56,13 +54,94 @@ public class FantasyInventory
     }
 
     public void Delete(Item DeleteNode) {
-        Root = Delete(Root!, DeleteNode);
+        Delete(Root!, DeleteNode);
     }
 
-    public InventoryNode Delete(InventoryNode Current, Item DeleteNode) {
-        InventoryNode ReplacementNode = Root;
+    public void Delete(InventoryNode Current, Item DeleteNode) {
+        if (Current == null)
+            return;
 
-        
+        if (Current.left == null && Current.Right == null) {
+            if (Current.value!.ID == DeleteNode.ID) {
+                Current = null;
+                return;
+            }
+            else
+                return;
+        }
+
+    static void deleteDeepest(InventoryNode root, Item DeleteNode)
+    {
+        Queue<InventoryNode> q = new();
+        q.Enqueue(root);
+
+        InventoryNode temp = null;
+
+        // Do level order traversal until last node
+        while (q.Count != 0) {
+            temp = q.Peek();
+            q.Dequeue();
+
+            if (temp.value.ID == DeleteNode.ID) {
+                temp = null;
+                return;
+            }
+            if (temp.Right != null) {
+                if (temp.Right.value.ID == DeleteNode.ID) {
+                    temp.Right = null;
+                    return;
+                }
+
+                else
+                    q.Enqueue(temp.Right);
+            }
+
+            if (temp.left != null) {
+                if (temp.left.value.ID == DeleteNode.ID) {
+                    temp.left = null;
+                    return;
+                }
+                else
+                    q.Enqueue(temp.left);
+            }
+        }
+    }
+
+        Queue<InventoryNode> q = new Queue<InventoryNode>();
+        q.Enqueue(Current);
+        InventoryNode temp = null, keyNode = null;
+
+        // Do level order traversal until
+        // we find key and last node.
+        while (q.Count != 0) {
+            temp = q.Peek();
+            q.Dequeue();
+
+            if (temp.value.ID == DeleteNode.ID)
+                keyNode = temp;
+
+            if (temp.left != null)
+                q.Enqueue(temp.left);
+
+            if (temp.Right != null)
+                q.Enqueue(temp.Right);
+        }
+
+        if (keyNode != null) {
+            int x = temp.value.ID;
+            keyNode.value = x;
+            deleteDeepest(Current, DeleteNode);
+        }
+    }
+
+    public void OptimizeTree() {
+        if (GetHeight(Root.left) < GetHeight(Root.Right)) {
+            //rotate left
+        }
+        else if (GetHeight(Root.left) > GetHeight(Root.Right)) {
+            //rotate right
+        }
+        //do nothing
     }
 
     public bool IsBalanced() => GetHeight(Root!.left!) == GetHeight(Root.Right!);

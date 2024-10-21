@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Coding Projects\\Python API Client\\FantasyInventory\\visualapp\\VisualApp.csproj": {}
+    "D:\\Coding Projects\\Python API Client\\FantasyInventory\\VisualApp\\VisualApp.csproj": {}
   },
   "projects": {
     "D:\\Coding Projects\\Python API Client\\FantasyInventory\\Inventory\\Inventory.csproj": {
@@ -69,14 +69,14 @@
         }
       }
     },
-    "D:\\Coding Projects\\Python API Client\\FantasyInventory\\visualapp\\VisualApp.csproj": {
+    "D:\\Coding Projects\\Python API Client\\FantasyInventory\\VisualApp\\VisualApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\visualapp\\VisualApp.csproj",
+        "projectUniqueName": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\VisualApp\\VisualApp.csproj",
         "projectName": "VisualApp",
-        "projectPath": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\visualapp\\VisualApp.csproj",
+        "projectPath": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\VisualApp\\VisualApp.csproj",
         "packagesPath": "C:\\Users\\Chase\\.nuget\\packages\\",
-        "outputPath": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\visualapp\\obj\\",
+        "outputPath": "D:\\Coding Projects\\Python API Client\\FantasyInventory\\VisualApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
